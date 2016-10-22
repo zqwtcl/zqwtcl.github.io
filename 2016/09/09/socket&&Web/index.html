@@ -84,37 +84,22 @@
 
 
 
-<meta name="description" content="RSA最广泛应用–数字证书
-为什么使用数字证书Create a new post1$ hexo new &quot;My New Post&quot;
-More info: Writing
-Run server1$ hexo server
-More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy to re">
+<meta name="description" content="原文：[原文]（http://www.cricode.com/3190.html）
+HTTP协议只是一个应用层协议，它底层是通过TCP进行传输数据的。因此，浏览器访问Web服务器的过程必须先有“连接建立”的发生
+而有人或许会问：众所周知，HTTP协议有两大特性，一个是“无连接”性，一个是“无状态”性。这里的“无连接”岂不是跟上面的说法有冲突？其实这里并没有矛盾，只是人们对“连接”这个词的理解有差异">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数字证书">
-<meta property="og:url" content="http://yoursite.com/2016/09/09/hello-worl/index.html">
+<meta property="og:title" content="socket请求Web服务器过程">
+<meta property="og:url" content="http://yoursite.com/2016/09/09/socket&&Web/index.html">
 <meta property="og:site_name" content="若有所思">
-<meta property="og:description" content="RSA最广泛应用–数字证书
-为什么使用数字证书Create a new post1$ hexo new &quot;My New Post&quot;
-More info: Writing
-Run server1$ hexo server
-More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy to re">
-<meta property="og:updated_time" content="2016-10-21T16:36:29.000Z">
+<meta property="og:description" content="原文：[原文]（http://www.cricode.com/3190.html）
+HTTP协议只是一个应用层协议，它底层是通过TCP进行传输数据的。因此，浏览器访问Web服务器的过程必须先有“连接建立”的发生
+而有人或许会问：众所周知，HTTP协议有两大特性，一个是“无连接”性，一个是“无状态”性。这里的“无连接”岂不是跟上面的说法有冲突？其实这里并没有矛盾，只是人们对“连接”这个词的理解有差异">
+<meta property="og:updated_time" content="2016-10-22T14:32:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数字证书">
-<meta name="twitter:description" content="RSA最广泛应用–数字证书
-为什么使用数字证书Create a new post1$ hexo new &quot;My New Post&quot;
-More info: Writing
-Run server1$ hexo server
-More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy to re">
+<meta name="twitter:title" content="socket请求Web服务器过程">
+<meta name="twitter:description" content="原文：[原文]（http://www.cricode.com/3190.html）
+HTTP协议只是一个应用层协议，它底层是通过TCP进行传输数据的。因此，浏览器访问Web服务器的过程必须先有“连接建立”的发生
+而有人或许会问：众所周知，HTTP协议有两大特性，一个是“无连接”性，一个是“无状态”性。这里的“无连接”岂不是跟上面的说法有冲突？其实这里并没有矛盾，只是人们对“连接”这个词的理解有差异">
 
 
 
@@ -135,9 +120,9 @@ Deploy to re">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/09/09/hello-worl/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/09/socket&&Web/"/>
 
-  <title> 数字证书 | 若有所思 </title>
+  <title> socket请求Web服务器过程 | 若有所思 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +262,7 @@ Deploy to re">
             
             
               
-                数字证书
+                socket请求Web服务器过程
               
             
           </h1>
@@ -322,15 +307,31 @@ Deploy to re">
       
 
       
-        <p>RSA最广泛应用–数字证书</p>
-<h2 id="为什么使用数字证书"><a href="#为什么使用数字证书" class="headerlink" title="为什么使用数字证书"></a>为什么使用数字证书</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>原文：[原文]（<a href="http://www.cricode.com/3190.html）" target="_blank" rel="external">http://www.cricode.com/3190.html）</a></p>
+<p>HTTP协议只是一个应用层协议，它底层是通过TCP进行传输数据的。因此，浏览器访问Web服务器的过程必须先有“连接建立”的发生</p>
+<p>而有人或许会问：众所周知，HTTP协议有两大特性，一个是“无连接”性，一个是“无状态”性。这里的“无连接”岂不是跟上面的说法有冲突？其实这里并没有矛盾，只是人们对“连接”这个词的理解有差异。首先我们来看一下浏览器向Web服务器发出Http请求以及Web服务器给浏览器回复的过程：</p>
+<p>1）浏览器创建Socket，按给定IP（域名）和端口（默认为80）连接服务器。比如使用类似Socket.Connect()、Socket.BeginConnect()等方法；</p>
+<p>2）连接成功后，浏览器依据HTTP协议规范（关于协议，后面有讲到），向Web服务器发送请求数据。比如“请求行”、“请求头标”以及“请求数据”等，这里可能使用类似Socket.Send()、Socket.BeginSend()等方法。【关于HTTP协议中的请求行、请求头标等请参见<a href="http://www.cnblogs.com/riky/archive/2007/04/09/705848.html】" target="_blank" rel="external">http://www.cnblogs.com/riky/archive/2007/04/09/705848.html】</a></p>
+<p>3）浏览器等待服务器处理并返回数据；</p>
+<p>4）Web服务器端使用Socket.Accept()、Socket.BeginAccept()等方法侦听到浏览器的连接后，便开始接收浏览器发送的数据。接收到请求数据后，依据HTTP协议规范解析数据，然后处理，最终将处理结果（如html文档）发回给浏览器，这里可能用到类似Socket.Send()、Socket.BeginSend()等方法；</p>
+<p>5）Web服务器发送完处理结果后，关闭Socket；</p>
+<p>6）浏览器接收Web服务器发回的数据（如html），将其显示在浏览器UI界面。关闭socket；</p>
+<p>7）一次“浏览器到Web服务器”的http请求结束；</p>
+<p>8）下一次浏览器需要请求Web服务器，跳转到第1）步循环开始。</p>
+<h3 id="无连接："><a href="#无连接：" class="headerlink" title="无连接："></a>无连接：</h3><p>HTTP的无连接特性恰恰就是指浏览器的每次请求都必须重新与服务器建立连接，正常情况下，浏览器不会与Web服务器保持长时间的连接状态；</p>
+<p>服务器与浏览器之间的一次连接只处理一个http请求，请求处理结束后，连接断开。下一次请求再重新建立连接。</p>
+<h3 id="无状态："><a href="#无状态：" class="headerlink" title="无状态："></a>无状态：</h3><p>服务器不会保存浏览器信息。也就是说，在服务器端，第一次http请求处理的结果不会保留到第二次请求。如果第二次请求处理时，需要用到第一次请求处理的结果，浏览器在第二次请求时，必须将第一次处理结果重新传回给Web服务器（比如使用cookie）。</p>
+<h3 id="关于“协议”："><a href="#关于“协议”：" class="headerlink" title="关于“协议”："></a>关于“协议”：</h3><p>计算机中协议  范畴广泛，单就网络通信中的协议，就不计其数，OSI七层中每层都很多种协议。那么协议到底本质上是个什么东西呢？单就通信中的协议来讲，协议的本质其实就是一种数据结构，类似代码中的结构体，说得再底层一点，就是一个字节流，规定好了第一个字节代表什么、第二个字节代表什么等等。</p>
+<p>协议的作用跟我们平时所说的“契约”、“约定”类似，一个团队合作的任务，合作各方必须同时遵守事先的约定，最后工作才能正常进行下去。网络通信中也一样，通信双方收/发数据时必须按照实现规定好了的结构去发送/接收，一方不遵守该规范，通信就不能成功。这里说的结构规范其实就是“协议”。协议有以下作用：</p>
+<p>1）既然是规范，那么按照规范做事，自己做的别人更容易理解，便于交流；</p>
+<p>2）将规范写成文档，提供给其他人，方便后期他人扩展。因为只要知道了通信规范，那么很容易就可以编写出扩展模块与原有系统协调工作。</p>
+<p>3）计算机网络通信中，有些因素决定了我们必须按照规定的格式收发数据，比如TCP通信中，由于数据是按照“流”式传输的，如果我们事先不定义数据传输规范，那么很难判断TCP传输的数据边界。</p>
+<p>就网络通信协议来讲，应用层协议与我们程序开发最为密切（至少对我们使用c#、java的人来讲），其他向tcp、udp等传输层协议几乎用不到。我们开发的通信程序，必须遵守实现定义好了的应用层协议，比如浏览器和Web服务器都遵守了HTTP应用层协议，只有这样，它们才能正常交互。倘若我们自己开发一个程序，正确地遵守了HTTP协议，那么我们的程序也能够像chrome、IE等浏览器一样，去访问Web服务器。</p>
+<p>文章末尾有一个使用socket模拟浏览器请求Web服务器的demo，实现的功能我们完全可以使用类似WebClient、WebRequest等类型去实现。demo功能如下：</p>
+<p>1）使用Socket连接Web服务器（任意）；</p>
+<p>2）按照HTTP协议格式发送HTTP请求（使用Socket.Send方法）；</p>
+<p>3）按照HTTP协议格式解析Web服务器返回的数据（其实就显示在了UI界面）</p>
+<p>（开发这样的程序需要我们充分熟悉socket编程、HTTP协议格式）</p>
 
       
     </div>
@@ -356,13 +357,17 @@ Deploy to re">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/09/socket&&Web/" rel="next" title="socket请求Web服务器过程">
-                <i class="fa fa-chevron-left"></i> socket请求Web服务器过程
+              <a href="/2016/09/09/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/09/hello-worl/" rel="prev" title="数字证书">
+                数字证书 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -462,7 +467,7 @@ Deploy to re">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么使用数字证书"><span class="nav-number">1.</span> <span class="nav-text">为什么使用数字证书</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#无连接："><span class="nav-number">1.</span> <span class="nav-text">无连接：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无状态："><span class="nav-number">2.</span> <span class="nav-text">无状态：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于“协议”："><span class="nav-number">3.</span> <span class="nav-text">关于“协议”：</span></a></li></ol></div>
             
           </div>
         </section>
